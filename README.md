@@ -1,53 +1,68 @@
-# Wagner Stoffel — AI Automation & Business Process Improvement
+# Wagner Stoffel | Project Management, AI & Automation
 
-A professional portfolio combining **financial operations, business analysis, and hands-on AI automation**. This repository hosts a lightweight website and technical project case studies.
+A professional portfolio connecting **project delivery, business analysis, artificial intelligence, and workflow automation**. It is grounded in experience in financial operations, administration, consulting, and continuous improvement.
 
-**Links:** [GitHub](https://github.com/wagner-stoffel) · [LinkedIn](https://www.linkedin.com/in/wagnerstoffel)
+**Profiles:** [LinkedIn](https://www.linkedin.com/in/wagnerstoffel) · [GitHub](https://github.com/wagner-stoffel)
 
-## Site
+## Professional focus
 
-- [Home](index.html): professional focus and featured project.
-- [About](about.html): background, expertise, and qualifications.
-- [Projects](projects.html): documented technical work.
-- [Contact](contact.html): verified professional contact links.
+| Area | Focus |
+| --- | --- |
+| Project management | Objectives, requirements, planning, prioritization, stakeholder communication, risks, and delivery. |
+| Business analysis | AS-IS and TO-BE processes, pain points, solution evaluation, and measurable outcomes. |
+| Artificial intelligence | LLMs, AI agents, tool integration, and evidence-based validation. |
+| Workflow automation | n8n, APIs, systems integration, and operational improvement. |
 
-## Technical projects
+## Selected project
 
-| Project | Stack | Status |
-| --- | --- | --- |
-| [Equity EOD AI Agent](projects/01-equity-eod-ai-agent/README.md) | n8n, OpenAI API, Marketstack | Tested learning prototype |
+### [Equity EOD AI Agent](projects/01-equity-eod-ai-agent/README.md)
 
-The first project demonstrates an n8n agent with an OpenAI chat model, Simple Memory, and a tool for retrieving end-of-day equity prices. Its [test plan](projects/01-equity-eod-ai-agent/docs/test-plan.md) distinguishes what was observed from what remains to be tested.
+**Stack:** n8n · OpenAI API · Marketstack  
+**Status:** Tested learning prototype — one recorded successful run, **not** a production deployment.
 
-## Preview locally
+The assistant retrieves historical end-of-day equity data through an external API tool. Its case study includes architecture, implementation notes, observed behavior, limitations, and a [test plan](projects/01-equity-eod-ai-agent/docs/test-plan.md). Reported API values have not been independently verified.
 
-This site uses plain HTML and CSS, without a build process.
+## How I approach delivery
 
-```bash
-python -m http.server 8000
-```
+**Discover → Define → Plan → Implement → Validate → Improve.** Business context and verification come before claims of success.
 
-Visit `http://localhost:8000`. A GitHub Pages deployment is possible; do not assume it is enabled just because this repository is public.
+- [Delivery method](docs/delivery-method.md): approach to scope, process analysis, delivery, risks, and validation.
+- [Case study template](docs/case-study-template.md): repeatable standard for future evidence-based documentation.
+
+Planned areas for future documented projects include business-process automation, AI-assisted knowledge retrieval, and project-delivery artifacts. They are **not** presented as completed work.
+
+## Portfolio website
+
+- [Home](index.html) — current professional focus
+- [About](about.html) — experience and qualifications
+- [Projects](projects.html) — documented projects
+- [Contact](contact.html) — professional links
+
+The website is an independent, lightweight HTML/CSS implementation. Preview locally with `python -m http.server 8000`, then open `http://localhost:8000`.
 
 ## Repository structure
 
 ```text
 portfolio/
+├── README.md
 ├── index.html
 ├── about.html
 ├── projects.html
 ├── contact.html
 ├── assets/css/styles.css
-├── projects/01-equity-eod-ai-agent/
-│   ├── README.md
-│   └── docs/test-plan.md
-└── archive/alura-frontend/
+├── docs/
+│   ├── delivery-method.md
+│   └── case-study-template.md
+└── projects/
+    └── 01-equity-eod-ai-agent/
+        ├── README.md
+        └── docs/test-plan.md
 ```
 
-The original Alura HTML/CSS exercise is preserved under [archive/alura-frontend](archive/alura-frontend/). It is not presented as the professional website.
+## Standards
 
-## Principles
-
-Each case study covers the problem, architecture, observed output, limits, and planned improvements. Learning projects are described as learning projects, not as client or production deliveries.
-
-**Security:** Do not commit API credentials, secrets, or unreviewed n8n workflow exports. Credentials belong in the appropriate service's secret manager.
+- Document the problem, objectives, scope, architecture, observed tests, limitations, and improvements.
+- Distinguish completed, observed, planned, and untested work.
+- Credit courses and third-party sources without presenting teaching materials as original.
+- Do not publish credentials, personal information, or unreviewed workflow exports.
+- Do not claim production use, measured impact, or repeatability without supporting evidence.
