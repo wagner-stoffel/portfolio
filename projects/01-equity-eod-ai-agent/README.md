@@ -1,6 +1,6 @@
 # Equity EOD AI Agent — n8n + OpenAI + Marketstack
 
-**Status:** Working proof of concept (successful test in n8n)  
+**Status:** Tested learning prototype (one successful execution observed)  
 **Focus:** Agentic AI · Tool calling · API integration · Conversational memory  
 **Learning context:** Week 1, Day 1 of [AI Builder: Create Agents, Voice Agents & Automations in n8n](https://www.udemy.com/course/ai-builder-with-n8n-create-agents-voice-agents/), taught by Ed Donner.
 
@@ -105,6 +105,10 @@ These are observations from **one run**, not a performance benchmark or guarante
 - Handle unknown tickers, empty datasets, API errors, and ambiguous questions explicitly before production use.
 - Validate important outputs against the underlying structured data.
 
+## Testing and validation
+
+See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke test from unexecuted checks for ambiguous symbols, API errors, source attribution, missing data, and credential hygiene.
+
 ## Next improvements
 
 - [ ] Add ticker validation and clarification for ambiguous company names.
@@ -112,7 +116,7 @@ These are observations from **one run**, not a performance benchmark or guarante
 - [ ] Add explicit error handling and rate-limit behavior.
 - [ ] Define structured output formatting and regression tests.
 - [ ] Export and sanitize the n8n workflow JSON for reproducibility.
-- [ ] Add a redacted workflow screenshot.
+- [ ] Add a redacted workflow screenshot (exclude session identifiers or confidential data).
 
 ## Scope and attribution
 

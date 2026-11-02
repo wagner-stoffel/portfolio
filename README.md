@@ -1,23 +1,53 @@
-# Wagner Stoffel — Technical Portfolio
+# Wagner Stoffel — AI Automation & Business Process Improvement
 
-This repository collects hands-on projects and experiments in software development, AI automation, and workflow integration.
+A professional portfolio combining **financial operations, business analysis, and hands-on AI automation**. This repository hosts a lightweight website and technical project case studies.
 
-## AI automation projects
+**Links:** [GitHub](https://github.com/wagner-stoffel) · [LinkedIn](https://www.linkedin.com/in/wagnerstoffel)
 
-| Project | Stack | Focus |
+## Site
+
+- [Home](index.html): professional focus and featured project.
+- [About](about.html): background, expertise, and qualifications.
+- [Projects](projects.html): documented technical work.
+- [Contact](contact.html): verified professional contact links.
+
+## Technical projects
+
+| Project | Stack | Status |
 | --- | --- | --- |
-| [Equity EOD AI Agent](projects/01-equity-eod-ai-agent/README.md) | n8n, OpenAI API, Marketstack | Conversational agent with tool calling, session memory, and financial market data |
+| [Equity EOD AI Agent](projects/01-equity-eod-ai-agent/README.md) | n8n, OpenAI API, Marketstack | Tested learning prototype |
 
-The first AI project is a documented working prototype. Its importable workflow export and a redacted screenshot are not yet included.
+The first project demonstrates an n8n agent with an OpenAI chat model, Simple Memory, and a tool for retrieving end-of-day equity prices. Its [test plan](projects/01-equity-eod-ai-agent/docs/test-plan.md) distinguishes what was observed from what remains to be tested.
 
-## Other work
+## Preview locally
 
-The repository also contains an earlier HTML/CSS portfolio website exercise (`index.html`, `about.html`, `style.css`). The AI automation work is organized separately under `projects/`.
+This site uses plain HTML and CSS, without a build process.
 
-## Approach
+```bash
+python -m http.server 8000
+```
 
-Each project documents the problem, architecture, observed behavior, constraints, and potential improvements. Learning exercises are identified as such; project claims are based on demonstrated behavior rather than production deployment.
+Visit `http://localhost:8000`. A GitHub Pages deployment is possible; do not assume it is enabled just because this repository is public.
 
-## Security
+## Repository structure
 
-Credentials and private data must not be committed. Workflow exports should be reviewed and sanitized before publication.
+```text
+portfolio/
+├── index.html
+├── about.html
+├── projects.html
+├── contact.html
+├── assets/css/styles.css
+├── projects/01-equity-eod-ai-agent/
+│   ├── README.md
+│   └── docs/test-plan.md
+└── archive/alura-frontend/
+```
+
+The original Alura HTML/CSS exercise is preserved under [archive/alura-frontend](archive/alura-frontend/). It is not presented as the professional website.
+
+## Principles
+
+Each case study covers the problem, architecture, observed output, limits, and planned improvements. Learning projects are described as learning projects, not as client or production deliveries.
+
+**Security:** Do not commit API credentials, secrets, or unreviewed n8n workflow exports. Credentials belong in the appropriate service's secret manager.
