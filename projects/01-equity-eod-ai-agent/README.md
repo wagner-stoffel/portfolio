@@ -2,7 +2,7 @@
 
 **Status:** Tested learning prototype (one successful execution observed)  
 **Focus:** Agentic AI · Tool calling · API integration · Conversational memory  
-**Learning context:** Week 1, Day 1 of [AI Builder: Create Agents, Voice Agents & Automations in n8n](https://www.udemy.com/course/ai-builder-with-n8n-create-agents-voice-agents/), taught by Ed Donner.
+**Learning context:** Implementation and observed test from Week 1, Day 1; documentation extended with Day 2 concepts from [AI Builder: Create Agents, Voice Agents & Automations in n8n](https://www.udemy.com/course/ai-builder-with-n8n-create-agents-voice-agents/), taught by Ed Donner.
 
 ## Overview
 
@@ -33,6 +33,42 @@ flowchart TD
 | **Get many EoD data in Marketstack** | Retrieves equity end-of-day data from an external financial-data API. |
 
 The workflow was built visually in n8n; no custom application code is required for the demonstrated interaction.
+
+## Day 2: context and tool execution
+
+**Documentation update only:** The following explanations and proposed configuration derive from the Day 2 course material. They do not establish that new settings have been applied or that additional tests have passed in this project's n8n instance.
+
+### Agent loop
+
+1. n8n supplies the model with the system message, user request, available tool definitions, and relevant conversation context.
+2. The model returns an answer or requests a tool with arguments.
+3. n8n executes the requested Marketstack operation.
+4. n8n passes the tool result back to the model.
+5. The model produces the final answer or requests another tool operation.
+
+The model requests the action; the surrounding workflow executes it. Simple Memory supplies conversation context to subsequent model calls. An isolated model call does not itself retain the previous conversation, and the available history depends on the memory configuration.
+
+### Proposed configuration to verify
+
+The Day 2 demonstration lets the model define the tool's ticker input and sets the **Latest** filter to **Yes** for the EOD lookup. Confirm these settings in the actual workflow and record them before describing them as implemented. Latest available EOD data is not a real-time quote.
+
+A [proposed system prompt](docs/system-prompt.md) defines Portuguese responses, tool use, source attribution, and missing-data behavior. Its wording is an adaptation for this project, not a transcript of the instructor's prompt. Apply and validate it before claiming these behaviors work.
+
+### Inspect an execution
+
+Open the workflow's **Executions** view and inspect the agent, chat model, memory, and tool details available for the selected run:
+
+- Confirm the system message and user request supplied to the model.
+- Check whether the relevant earlier messages are present in the context.
+- Inspect the requested ticker and the tool configuration used for the EOD lookup.
+- Compare the returned ticker, date, currency where available, and close with the final answer.
+- Record errors or missing fields rather than inferring successful behavior from fluent text.
+
+The instance-level **Executions** view provides access to runs across workflows. UI labels follow the course demonstration and may vary by version.
+
+### Keep the architecture measurable
+
+Start with this single-agent workflow. Add chained model calls or separate agents only when comparisons show better outcomes. A chain passes one call's output into the next call; an agent loop selects tool actions based on the task and accumulated results. Compare correctness, appropriate tool use, response time, and cost on the same test cases before choosing a more complex design or a different reasoning configuration.
 
 ## Demonstrated behavior
 
@@ -107,9 +143,13 @@ These are observations from **one run**, not a performance benchmark or guarante
 
 ## Testing and validation
 
-See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke test from unexecuted checks for ambiguous symbols, API errors, source attribution, missing data, and credential hygiene.
+See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke test from unexecuted checks for ambiguous symbols, API errors, source attribution, missing data, and credential hygiene. Day 2 adds planned checks for memory recall, system-prompt adherence, tool selection, tool parameters, and response traceability; none of those new checks has been executed.
 
 ## Next improvements
+
+- [ ] Apply and validate the proposed system prompt.
+- [ ] Verify model-defined ticker input and the Latest EOD filter in the actual workflow.
+- [ ] Execute and document the Day 2 acceptance scenarios (T09–T13).
 
 - [ ] Add ticker validation and clarification for ambiguous company names.
 - [ ] Return the market date, currency, and data source alongside every price.
@@ -120,6 +160,6 @@ See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke 
 
 ## Scope and attribution
 
-This case study documents **my hands-on implementation and test** from the course's first day. It is not a transcript or a reproduction of the instructor's teaching materials.
+This case study documents **my hands-on implementation and test** from the course's first day, with a documentation extension based on Week 1, Day 2. Day 2 configuration and acceptance checks remain proposed and untested. The explanations and prompt are project-specific summaries and adaptations, not a transcript or a reproduction of the instructor's teaching materials.
 
 **Tools:** [n8n](https://n8n.io/) · [OpenAI API](https://platform.openai.com/) · [Marketstack](https://marketstack.com/)
