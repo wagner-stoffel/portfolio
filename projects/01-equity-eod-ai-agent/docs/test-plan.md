@@ -47,6 +47,22 @@ Inspect the system message, relevant history, tool request, and tool response in
 
 Keep unexecuted tests marked **Not run**. Record duration and token usage only when observed; one successful run does not demonstrate repeatability or a performance improvement.
 
+## Day 3 acceptance tests — not run
+
+Use a separate synthetic sheet with unique symbols and known quantities. Record initial values, actual node/model versions, configured document and sheet, execution inputs/outputs, final cell values, and pass/fail results. Never publish account identifiers or real holdings.
+
+| ID | Scenario | Acceptance criterion | Status |
+| --- | --- | --- | --- |
+| T14 | Read the selected test sheet | Returned rows and ticker/quantity/price fields match the selected document and tab | Not run |
+| T15 | Update three distinct valid symbols | Each updated price equals its matching API EOD close; market dates and available currencies are recorded; no live-price claim | Not run |
+| T16 | Preserve fields and row count | Quantities, tickers, unrelated columns, and row count remain unchanged; quantity is excluded from update mapping | Not run |
+| T17 | Invalid symbol or empty API result | Affected price remains unchanged; failure is explicit; no invented value | Not run |
+| T18 | Duplicate ticker or ambiguous company name | Ambiguity is reported before any affected row is updated | Not run |
+| T19 | API timeout, revoked Sheets access, or partial failure | No false all-success claim; successful and failed rows are distinguished; failed writes are not reported as complete | Not run |
+| T20 | Repeat request and inspect trace | No appended duplicate rows; inspect actual tool calls and compare each write with its source record; changed prices require corresponding source data | Not run |
+
+The course demonstration does not count as a passing test. Validation and duplicate/failure handling are requirements for the proposed extension, not implemented guarantees.
+
 ## Criteria before production use
 
 - Export, review, and sanitize the workflow JSON.

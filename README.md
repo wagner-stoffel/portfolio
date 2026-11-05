@@ -13,7 +13,7 @@ A professional portfolio connecting **project delivery, business analysis, artif
 | Artificial intelligence | LLMs, AI agents, tool integration, and evidence-based validation. |
 | Workflow automation | n8n, APIs, systems integration, and operational improvement. |
 
-## Selected project
+## Selected cases
 
 ### [Equity EOD AI Agent](projects/01-equity-eod-ai-agent/README.md)
 
@@ -21,6 +21,15 @@ A professional portfolio connecting **project delivery, business analysis, artif
 **Status:** Tested learning prototype — one recorded successful run, **not** a production deployment.
 
 The assistant retrieves historical end-of-day equity data through an external API tool. Its case study includes architecture, implementation notes, observed behavior, limitations, and a [test plan](projects/01-equity-eod-ai-agent/docs/test-plan.md). Reported API values have not been independently verified.
+
+The Day 3 extension proposes reading a Google Sheets portfolio and updating EOD prices by ticker. This integration is documented but **not implemented or tested**.
+
+### [Gmail Draft Assistant](projects/02-gmail-draft-assistant/README.md)
+
+**Proposed stack:** n8n · OpenAI API · Gmail  
+**Status:** Planned learning case — documentation only.
+
+The case defines recent-message retrieval, summaries, and draft creation for a fixed test recipient, with human review and no send tool. It includes scope, configuration notes, limitations, and an [unexecuted test plan](projects/02-gmail-draft-assistant/docs/test-plan.md). No Gmail implementation or results are claimed.
 
 ## How I approach delivery
 
@@ -54,7 +63,12 @@ portfolio/
 │   ├── delivery-method.md
 │   └── case-study-template.md
 └── projects/
-    └── 01-equity-eod-ai-agent/
+    ├── 01-equity-eod-ai-agent/
+    │   ├── README.md
+    │   └── docs/
+    │       ├── system-prompt.md
+    │       └── test-plan.md
+    └── 02-gmail-draft-assistant/
         ├── README.md
         └── docs/test-plan.md
 ```

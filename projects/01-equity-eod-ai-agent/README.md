@@ -2,7 +2,7 @@
 
 **Status:** Tested learning prototype (one successful execution observed)  
 **Focus:** Agentic AI · Tool calling · API integration · Conversational memory  
-**Learning context:** Implementation and observed test from Week 1, Day 1; documentation extended with Day 2 concepts from [AI Builder: Create Agents, Voice Agents & Automations in n8n](https://www.udemy.com/course/ai-builder-with-n8n-create-agents-voice-agents/), taught by Ed Donner.
+**Learning context:** Implementation and observed test from Week 1, Day 1; documentation extended with Day 2 and Day 3 concepts from [AI Builder: Create Agents, Voice Agents & Automations in n8n](https://www.udemy.com/course/ai-builder-with-n8n-create-agents-voice-agents/), taught by Ed Donner.
 
 ## Overview
 
@@ -69,6 +69,46 @@ The instance-level **Executions** view provides access to runs across workflows.
 ### Keep the architecture measurable
 
 Start with this single-agent workflow. Add chained model calls or separate agents only when comparisons show better outcomes. A chain passes one call's output into the next call; an agent loop selects tool actions based on the task and accumulated results. Compare correctness, appropriate tool use, response time, and cost on the same test cases before choosing a more complex design or a different reasoning configuration.
+
+## Day 3: proposed Google Sheets portfolio integration
+
+**Status: documented proposal; not implemented or tested in this portfolio.** The Day 1 execution above remains the only observed result. The instructor's Day 3 demonstration is learning material, not evidence of my own execution.
+
+### Problem and intended value
+
+The current prototype answers a price question in chat. A portfolio maintained manually requires copying those results into a sheet. The proposed extension reads portfolio rows, obtains the latest available EOD close, and writes it back to the matching row. The intended benefit is less manual copying; time savings and accuracy improvements have not been measured.
+
+### Proposed tool configuration
+
+Retain the chat trigger, AI Agent, chat model, and Simple Memory. Connect three tools to the agent:
+
+| Tool | Proposed configuration | Allowed role |
+| --- | --- | --- |
+| Google Sheets read | Select a fixed test document and sheet; get rows | Read `ticker`, `quantity`, and `price` |
+| Marketstack lookup | EOD data; Get Many; model-defined ticker; Latest enabled | Retrieve the latest available EOD record |
+| Google Sheets update | Same fixed document and sheet; Update Row; match on `ticker` | Supply the matching ticker and update `price`; exclude `quantity` from writable fields |
+
+These are course-derived configuration notes to verify in the actual n8n version, not an importable workflow. Google authorization must be configured in n8n; the Cloud sign-in demonstrated in the course does not establish self-hosted setup steps.
+
+### Data contract and expected sequence
+
+Use explicit symbols such as `GOOGL`, `AAPL`, and `TSLA` in a synthetic test sheet, with one unique ticker per row. These are sample inputs, not portfolio holdings.
+
+1. Read the selected sheet and identify the rows to update.
+2. Retrieve the latest available EOD data for each valid symbol.
+3. Confirm that the returned symbol matches the requested row and that a usable close exists.
+4. Write the returned `close` to `price`, matching the existing ticker. Preserve quantities and other rows.
+5. Report successful updates, skipped rows, failures, and the source market dates.
+
+Symbol validation, duplicate detection, and failure handling are **additional proposed acceptance requirements**, not behaviors demonstrated in this project. Do not replace an existing price with a guess, zero, or an empty value on lookup failure. A partial failure should be reported as partial completion.
+
+The field `price` means the selected record's EOD close, not a live quote. Preserve the returned market date and currency, where available, in the execution evidence. Persisting `market_date`, `currency`, and `updated_at` in extra columns is a future extension. High/low columns are another optional exercise from the course, outside the initial scope.
+
+### Validation and delivery
+
+Start with a separate test sheet. Inspect each tool's input and output in JSON or table view, then compare the API close with the updated cell. Capture redacted before/after sheet values and the execution trace. The course illustrates one sheet read and multiple lookups and updates; actual invocation counts must be observed, not assumed.
+
+Run the Day 3 scenarios in the [test plan](docs/test-plan.md). Export and sanitize the workflow only after configuration and validation. No Google Sheets connection, workflow export, sheet write, or performance result is claimed by this documentation update.
 
 ## Demonstrated behavior
 
@@ -145,8 +185,11 @@ These are observations from **one run**, not a performance benchmark or guarante
 
 See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke test from unexecuted checks for ambiguous symbols, API errors, source attribution, missing data, and credential hygiene. Day 2 adds planned checks for memory recall, system-prompt adherence, tool selection, tool parameters, and response traceability; none of those new checks has been executed.
 
+Day 3 adds planned checks for sheet reads, row matching, quantity preservation, failure handling, and output traceability (T14–T20); these checks have not been executed.
+
 ## Next improvements
 
+- [ ] Configure the proposed Day 3 tools against a synthetic Google Sheet and run T14–T20.
 - [ ] Apply and validate the proposed system prompt.
 - [ ] Verify model-defined ticker input and the Latest EOD filter in the actual workflow.
 - [ ] Execute and document the Day 2 acceptance scenarios (T09–T13).
@@ -160,6 +203,6 @@ See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke 
 
 ## Scope and attribution
 
-This case study documents **my hands-on implementation and test** from the course's first day, with a documentation extension based on Week 1, Day 2. Day 2 configuration and acceptance checks remain proposed and untested. The explanations and prompt are project-specific summaries and adaptations, not a transcript or a reproduction of the instructor's teaching materials.
+This case study documents **my hands-on implementation and test** from the course's first day, with documentation extensions based on Week 1, Days 2 and 3. Day 2 configuration and the Day 3 Google Sheets integration and acceptance checks remain proposed and untested. The explanations and prompt are project-specific summaries and adaptations, not a transcript or a reproduction of the instructor's teaching materials.
 
 **Tools:** [n8n](https://n8n.io/) · [OpenAI API](https://platform.openai.com/) · [Marketstack](https://marketstack.com/)
