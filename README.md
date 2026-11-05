@@ -31,6 +31,14 @@ The Day 3 extension proposes reading a Google Sheets portfolio and updating EOD 
 
 The case defines recent-message retrieval, summaries, and draft creation for a fixed test recipient, with human review and no send tool. It includes scope, configuration notes, limitations, and an [unexecuted test plan](projects/02-gmail-draft-assistant/docs/test-plan.md). No Gmail implementation or results are claimed.
 
+## Learning lab
+
+Course exercises are grouped in [n8n-lab](https://github.com/wagner-stoffel/n8n-lab), organized by week and day. This portfolio remains the home for selected cases, professional context and delivery documentation.
+
+[Week 1 · Day 4](https://github.com/wagner-stoffel/n8n-lab/tree/main/week-01/day-04) covers Pushover notifications, Telegram conversations and Slack app mentions, alongside JSON, expressions, credentials and webhooks. I completed all Day 4 examples; workflow exports and detailed execution evidence are pending publication. These are course exercises, not a claim of continuous production operation.
+
+Future standalone repositories will hold projects that develop their own reusable implementation and validation. The existing cases remain here; connecting the Day 4 channels to the Equity Agent is a future extension.
+
 ## How I approach delivery
 
 **Discover → Define → Plan → Implement → Validate → Improve.** Business context and verification come before claims of success.
