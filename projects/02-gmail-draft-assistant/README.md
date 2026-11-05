@@ -1,13 +1,12 @@
 # Gmail Draft Assistant — n8n + OpenAI + Gmail
 
-**Status:** Planned learning case — documentation only; no implementation or execution evidence supplied.  
+**Status:** I am designing this experiment; implementation and testing are still pending.  
 **Focus:** Email integration · Tool calling · Human review · Constrained actions  
-**Learning context:** Week 1, Day 3 of [AI Builder: Create Agents, Voice Agents & Automations in n8n](https://www.udemy.com/course/ai-builder-with-n8n-create-agents-voice-agents/), taught by Ed Donner.  
-**Contribution documented here:** Project-specific scope, workflow design, acceptance criteria, and delivery plan adapted from the lesson.
+**My focus:** Scope, workflow design, acceptance criteria and a practical delivery plan.
 
 ## Problem and intended business value
 
-Reading recent emails and preparing replies involves repeated review and composition. This learning case proposes an assistant that summarizes retrieved messages and prepares a draft for a person to inspect. The intended value is reduced preparation effort while retaining human control; no time savings, accuracy, or operational impact have been measured.
+Reading recent emails and preparing replies involves repeated review and composition. I want to explore an assistant that summarizes retrieved messages and prepares a draft for a person to inspect. The intended value is reduced preparation effort while retaining human control; no time savings, accuracy, or operational impact have been measured.
 
 ## Objectives and scope
 
@@ -40,7 +39,7 @@ Expected flow: user request → retrieve recent email → summarize retrieved co
 7. Explicitly request a draft based on that message and the desired reply. Verify the draft directly in Gmail, including its recipient and content.
 8. Run the [acceptance tests](docs/test-plan.md), capture redacted evidence, and only then revise the project status.
 
-UI labels and credential setup must be verified in the actual environment. These course-derived notes are not a tested configuration or an importable n8n workflow.
+UI labels and credential setup must be verified in the actual environment. I have not yet validated this configuration or published an importable workflow.
 
 ## Proposed operating rules
 
@@ -55,9 +54,9 @@ These rules and failure behaviors are design requirements, not validated protect
 
 ## Tests and evidence
 
-All tests are **Not run** in the [test plan](docs/test-plan.md). The instructor's successful demonstration is not evidence of my own implementation.
+I have not run the scenarios in my [test plan](docs/test-plan.md) yet.
 
-There is currently no workflow JSON, screenshot, Gmail draft, execution log, selected model/version record, or measured result supplied for this case. No mailbox was read or changed to prepare this documentation.
+I still need to build the workflow and capture its configuration, a test draft and execution details. I have not measured preparation time or output quality.
 
 ## Limitations and risks
 
@@ -76,9 +75,5 @@ There is currently no workflow JSON, screenshot, Gmail draft, execution log, sel
 - [ ] Capture sanitized execution evidence and draft verification.
 - [ ] Export and review workflow JSON for reproducibility.
 - [ ] Measure preparation time and draft quality before claiming benefits.
-
-## Attribution
-
-This case is an original summary and project adaptation of the Day 3 course material supplied as W1D3.md, not a reproduction of the transcript. Gmail integration and the draft-only exercise originate from the course; the acceptance plan and additional validation requirements are proposed for this portfolio.
 
 [Back to portfolio](../../README.md)

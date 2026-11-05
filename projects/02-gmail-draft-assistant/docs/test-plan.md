@@ -1,6 +1,6 @@
 # Gmail Draft Assistant — test plan
 
-**Status: all scenarios Not run.** No execution evidence has been supplied. Use synthetic messages and a fixed recipient controlled by the operator.
+**Status: all scenarios Not run.** I will use synthetic messages and a fixed recipient I control to validate this experiment.
 
 ## Acceptance scenarios
 

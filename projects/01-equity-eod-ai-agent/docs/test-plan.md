@@ -1,6 +1,6 @@
 # Equity EOD AI Agent — test plan
 
-This plan separates one **observed** successful execution from **unexecuted** acceptance scenarios.
+I use this plan to separate my recorded successful execution from checks I still need to run.
 
 ## Observed smoke test
 
@@ -27,9 +27,9 @@ The screenshot demonstrates one successful execution, **not** an accuracy or per
 | T07 | Data attribution | State historical EOD status and identify source | Not run |
 | T08 | Credentials | No secrets in any exported or committed files | Not run |
 
-## Day 2 acceptance tests — not run
+## Context and tool checks — not run
 
-Apply the [proposed system prompt](system-prompt.md) in a test workflow before testing its behavior. Record the actual model, node versions, memory settings, and tool configuration used. Course examples are not execution evidence for this project.
+Apply the [proposed system prompt](system-prompt.md) in a test workflow before testing its behavior. Record the actual model, node versions, memory settings, and tool configuration used. I will record outcomes from my own test runs.
 
 | ID | Scenario and input | Acceptance criterion | Status |
 | --- | --- | --- | --- |
@@ -47,7 +47,7 @@ Inspect the system message, relevant history, tool request, and tool response in
 
 Keep unexecuted tests marked **Not run**. Record duration and token usage only when observed; one successful run does not demonstrate repeatability or a performance improvement.
 
-## Day 3 acceptance tests — not run
+## Sheets integration checks — not run
 
 Use a separate synthetic sheet with unique symbols and known quantities. Record initial values, actual node/model versions, configured document and sheet, execution inputs/outputs, final cell values, and pass/fail results. Never publish account identifiers or real holdings.
 
@@ -61,7 +61,7 @@ Use a separate synthetic sheet with unique symbols and known quantities. Record 
 | T19 | API timeout, revoked Sheets access, or partial failure | No false all-success claim; successful and failed rows are distinguished; failed writes are not reported as complete | Not run |
 | T20 | Repeat request and inspect trace | No appended duplicate rows; inspect actual tool calls and compare each write with its source record; changed prices require corresponding source data | Not run |
 
-The course demonstration does not count as a passing test. Validation and duplicate/failure handling are requirements for the proposed extension, not implemented guarantees.
+I still need to implement and validate the proposed extension, including duplicate and failure handling.
 
 ## Criteria before production use
 

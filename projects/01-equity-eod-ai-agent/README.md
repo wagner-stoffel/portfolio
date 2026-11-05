@@ -2,11 +2,10 @@
 
 **Status:** Tested learning prototype (one successful execution observed)  
 **Focus:** Agentic AI · Tool calling · API integration · Conversational memory  
-**Learning context:** Implementation and observed test from Week 1, Day 1; documentation extended with Day 2 and Day 3 concepts from [AI Builder: Create Agents, Voice Agents & Automations in n8n](https://www.udemy.com/course/ai-builder-with-n8n-create-agents-voice-agents/), taught by Ed Donner.
 
 ## Overview
 
-This project demonstrates an AI assistant that accepts natural-language questions about equity prices and retrieves historical **end-of-day (EOD)** market data through a tool connected to an n8n AI Agent.
+I built this prototype to explore how an AI assistant can accept natural-language questions about equity prices and retrieve historical **end-of-day (EOD)** market data through a tool connected to an n8n AI Agent.
 
 Instead of asking the language model to recall stock prices from its training data, the workflow gives the agent a market-data retrieval tool. The model interprets the question and formats the returned data into a readable answer.
 
@@ -32,11 +31,11 @@ flowchart TD
 | **Simple Memory** | Maintains conversational context within the session. |
 | **Get many EoD data in Marketstack** | Retrieves equity end-of-day data from an external financial-data API. |
 
-The workflow was built visually in n8n; no custom application code is required for the demonstrated interaction.
+I built the workflow visually in n8n; no custom application code is required for the demonstrated interaction.
 
-## Day 2: context and tool execution
+## Context and tool execution
 
-**Documentation update only:** The following explanations and proposed configuration derive from the Day 2 course material. They do not establish that new settings have been applied or that additional tests have passed in this project's n8n instance.
+I am documenting how context and tool execution work, along with settings I still want to verify. These notes do not add new test results.
 
 ### Agent loop
 
@@ -50,9 +49,9 @@ The model requests the action; the surrounding workflow executes it. Simple Memo
 
 ### Proposed configuration to verify
 
-The Day 2 demonstration lets the model define the tool's ticker input and sets the **Latest** filter to **Yes** for the EOD lookup. Confirm these settings in the actual workflow and record them before describing them as implemented. Latest available EOD data is not a real-time quote.
+I want to verify model-defined ticker input and the **Latest** filter set to **Yes** in the actual workflow. Latest available EOD data is not a real-time quote.
 
-A [proposed system prompt](docs/system-prompt.md) defines Portuguese responses, tool use, source attribution, and missing-data behavior. Its wording is an adaptation for this project, not a transcript of the instructor's prompt. Apply and validate it before claiming these behaviors work.
+A [proposed system prompt](docs/system-prompt.md) defines Portuguese responses, tool use, source attribution, and missing-data behavior. I still need to apply it and validate the resulting behavior.
 
 ### Inspect an execution
 
@@ -64,15 +63,15 @@ Open the workflow's **Executions** view and inspect the agent, chat model, memor
 - Compare the returned ticker, date, currency where available, and close with the final answer.
 - Record errors or missing fields rather than inferring successful behavior from fluent text.
 
-The instance-level **Executions** view provides access to runs across workflows. UI labels follow the course demonstration and may vary by version.
+The instance-level **Executions** view provides access to runs across workflows. UI labels may vary by version.
 
 ### Keep the architecture measurable
 
 Start with this single-agent workflow. Add chained model calls or separate agents only when comparisons show better outcomes. A chain passes one call's output into the next call; an agent loop selects tool actions based on the task and accumulated results. Compare correctness, appropriate tool use, response time, and cost on the same test cases before choosing a more complex design or a different reasoning configuration.
 
-## Day 3: proposed Google Sheets portfolio integration
+## Exploring a Google Sheets portfolio integration
 
-**Status: documented proposal; not implemented or tested in this portfolio.** The Day 1 execution above remains the only observed result. The instructor's Day 3 demonstration is learning material, not evidence of my own execution.
+**Status: proposal.** I have not implemented or tested this extension. My recorded EOD lookup remains the only documented execution for this case.
 
 ### Problem and intended value
 
@@ -88,7 +87,7 @@ Retain the chat trigger, AI Agent, chat model, and Simple Memory. Connect three 
 | Marketstack lookup | EOD data; Get Many; model-defined ticker; Latest enabled | Retrieve the latest available EOD record |
 | Google Sheets update | Same fixed document and sheet; Update Row; match on `ticker` | Supply the matching ticker and update `price`; exclude `quantity` from writable fields |
 
-These are course-derived configuration notes to verify in the actual n8n version, not an importable workflow. Google authorization must be configured in n8n; the Cloud sign-in demonstrated in the course does not establish self-hosted setup steps.
+I still need to verify these configuration notes in my n8n environment and configure Google authorization. I have not published an importable workflow for this extension.
 
 ### Data contract and expected sequence
 
@@ -102,13 +101,13 @@ Use explicit symbols such as `GOOGL`, `AAPL`, and `TSLA` in a synthetic test she
 
 Symbol validation, duplicate detection, and failure handling are **additional proposed acceptance requirements**, not behaviors demonstrated in this project. Do not replace an existing price with a guess, zero, or an empty value on lookup failure. A partial failure should be reported as partial completion.
 
-The field `price` means the selected record's EOD close, not a live quote. Preserve the returned market date and currency, where available, in the execution evidence. Persisting `market_date`, `currency`, and `updated_at` in extra columns is a future extension. High/low columns are another optional exercise from the course, outside the initial scope.
+The field `price` means the selected record's EOD close, not a live quote. Preserve the returned market date and currency, where available, in the execution evidence. Persisting `market_date`, `currency`, and `updated_at` in extra columns is a future extension. High/low columns are another possibility outside my initial scope.
 
 ### Validation and delivery
 
-Start with a separate test sheet. Inspect each tool's input and output in JSON or table view, then compare the API close with the updated cell. Capture redacted before/after sheet values and the execution trace. The course illustrates one sheet read and multiple lookups and updates; actual invocation counts must be observed, not assumed.
+Start with a separate test sheet. Inspect each tool's input and output in JSON or table view, then compare the API close with the updated cell. Capture redacted before/after sheet values and the execution trace. I will record actual invocation counts from execution traces.
 
-Run the Day 3 scenarios in the [test plan](docs/test-plan.md). Export and sanitize the workflow only after configuration and validation. No Google Sheets connection, workflow export, sheet write, or performance result is claimed by this documentation update.
+Run the Sheets scenarios in the [test plan](docs/test-plan.md). Export and sanitize the workflow only after configuration and validation. No Google Sheets connection, workflow export, sheet write, or performance result is claimed by this documentation update.
 
 ## Demonstrated behavior
 
@@ -159,7 +158,7 @@ These are observations from **one run**, not a performance benchmark or guarante
 8. Open the n8n chat, ask for the end-of-day price of an equity, and inspect the execution logs and returned data.
 9. Confirm the agent uses the tool and that the final answer is consistent with the tool's output.
 
-> **Reproducibility note:** This document describes the observed node architecture and a high-level reconstruction procedure. The exact node parameters and an importable n8n workflow JSON have **not yet been supplied**, so this is not presented as a one-click import or a fully reproducible export.
+> **Reproducibility note:** I still need to publish exact node settings and a reviewed workflow JSON. For now, I document the architecture and reconstruction steps.
 
 ## Engineering considerations
 
@@ -183,16 +182,16 @@ These are observations from **one run**, not a performance benchmark or guarante
 
 ## Testing and validation
 
-See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke test from unexecuted checks for ambiguous symbols, API errors, source attribution, missing data, and credential hygiene. Day 2 adds planned checks for memory recall, system-prompt adherence, tool selection, tool parameters, and response traceability; none of those new checks has been executed.
+See the [test plan](docs/test-plan.md). It distinguishes the one observed smoke test from unexecuted checks for ambiguous symbols, API errors, source attribution, missing data, and credential hygiene. I have planned checks for memory recall, system-prompt adherence, tool selection, tool parameters, and response traceability; none of those new checks has been executed.
 
-Day 3 adds planned checks for sheet reads, row matching, quantity preservation, failure handling, and output traceability (T14–T20); these checks have not been executed.
+I also plan checks for sheet reads, row matching, quantity preservation, failure handling, and output traceability (T14–T20); these checks have not been executed.
 
 ## Next improvements
 
-- [ ] Configure the proposed Day 3 tools against a synthetic Google Sheet and run T14–T20.
+- [ ] Configure the proposed Sheets tools against a synthetic Google Sheet and run T14–T20.
 - [ ] Apply and validate the proposed system prompt.
 - [ ] Verify model-defined ticker input and the Latest EOD filter in the actual workflow.
-- [ ] Execute and document the Day 2 acceptance scenarios (T09–T13).
+- [ ] Execute and document the context and tool acceptance scenarios (T09–T13).
 
 - [ ] Add ticker validation and clarification for ambiguous company names.
 - [ ] Return the market date, currency, and data source alongside every price.
@@ -201,8 +200,8 @@ Day 3 adds planned checks for sheet reads, row matching, quantity preservation, 
 - [ ] Export and sanitize the n8n workflow JSON for reproducibility.
 - [ ] Add a redacted workflow screenshot (exclude session identifiers or confidential data).
 
-## Scope and attribution
+## Where I am
 
-This case study documents **my hands-on implementation and test** from the course's first day, with documentation extensions based on Week 1, Days 2 and 3. Day 2 configuration and the Day 3 Google Sheets integration and acceptance checks remain proposed and untested. The explanations and prompt are project-specific summaries and adaptations, not a transcript or a reproduction of the instructor's teaching materials.
+I built and tested the EOD lookup prototype. I am using these notes to explore clearer prompts, more traceable answers and a possible Sheets integration. The proposed settings and additional acceptance checks still need validation.
 
 **Tools:** [n8n](https://n8n.io/) · [OpenAI API](https://platform.openai.com/) · [Marketstack](https://marketstack.com/)

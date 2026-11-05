@@ -1,6 +1,6 @@
 # Wagner Stoffel | Project Management, AI & Automation
 
-A professional portfolio connecting **project delivery, business analysis, artificial intelligence, and workflow automation**. It is grounded in experience in financial operations, administration, consulting, and continuous improvement.
+I connect **project delivery, business analysis, artificial intelligence, and workflow automation**. My work is grounded in experience in financial operations, administration, consulting, and continuous improvement.
 
 **Profiles:** [LinkedIn](https://www.linkedin.com/in/wagnerstoffel) · [GitHub](https://github.com/wagner-stoffel)
 
@@ -20,24 +20,24 @@ A professional portfolio connecting **project delivery, business analysis, artif
 **Stack:** n8n · OpenAI API · Marketstack  
 **Status:** Tested learning prototype — one recorded successful run, **not** a production deployment.
 
-The assistant retrieves historical end-of-day equity data through an external API tool. Its case study includes architecture, implementation notes, observed behavior, limitations, and a [test plan](projects/01-equity-eod-ai-agent/docs/test-plan.md). Reported API values have not been independently verified.
+I built the assistant to retrieve historical end-of-day equity data through an external API tool. Its case study includes architecture, implementation notes, observed behavior, limitations, and a [test plan](projects/01-equity-eod-ai-agent/docs/test-plan.md). Reported API values have not been independently verified.
 
-The Day 3 extension proposes reading a Google Sheets portfolio and updating EOD prices by ticker. This integration is documented but **not implemented or tested**.
+I am exploring an extension to read a Google Sheets portfolio and update EOD prices by ticker. This integration is documented but **not implemented or tested**.
 
 ### [Gmail Draft Assistant](projects/02-gmail-draft-assistant/README.md)
 
 **Proposed stack:** n8n · OpenAI API · Gmail  
 **Status:** Planned learning case — documentation only.
 
-The case defines recent-message retrieval, summaries, and draft creation for a fixed test recipient, with human review and no send tool. It includes scope, configuration notes, limitations, and an [unexecuted test plan](projects/02-gmail-draft-assistant/docs/test-plan.md). No Gmail implementation or results are claimed.
+I am designing recent-message retrieval, summaries, and draft creation for a fixed test recipient, with human review and no send tool. It includes scope, configuration notes, limitations, and an [unexecuted test plan](projects/02-gmail-draft-assistant/docs/test-plan.md). No Gmail implementation or results are claimed.
 
-## Learning lab
+## Field lab
 
-Course exercises are grouped in [n8n-lab](https://github.com/wagner-stoffel/n8n-lab), organized by week and day. This portfolio remains the home for selected cases, professional context and delivery documentation.
+I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and record practical experiments.
 
-[Week 1 · Day 4](https://github.com/wagner-stoffel/n8n-lab/tree/main/week-01/day-04) covers Pushover notifications, Telegram conversations and Slack app mentions, alongside JSON, expressions, credentials and webhooks. I completed all Day 4 examples; workflow exports and detailed execution evidence are pending publication. These are course exercises, not a claim of continuous production operation.
+In my [messaging experiments](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/messaging), I built Pushover notifications, Telegram conversations and a Slack bot. I am documenting the configuration and still need to add reviewed workflow exports and execution details.
 
-Future standalone repositories will hold projects that develop their own reusable implementation and validation. The existing cases remain here; connecting the Day 4 channels to the Equity Agent is a future extension.
+I keep selected cases here and smaller experiments in the lab. Connecting these messaging channels to the Equity Agent is one of the ideas I want to explore next.
 
 ## How I approach delivery
 
@@ -85,6 +85,6 @@ portfolio/
 
 - Document the problem, objectives, scope, architecture, observed tests, limitations, and improvements.
 - Distinguish completed, observed, planned, and untested work.
-- Credit courses and third-party sources without presenting teaching materials as original.
+- Reference relevant technical documentation and respect third-party licenses.
 - Do not publish credentials, personal information, or unreviewed workflow exports.
 - Do not claim production use, measured impact, or repeatability without supporting evidence.
