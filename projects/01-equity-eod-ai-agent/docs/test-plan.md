@@ -1,22 +1,22 @@
 # Equity Agent & Portfolio Rebalancer — execution record
 
-## Day 5 exercises
+## Implemented and executed workflow
 
-I completed the Day 5 exercises, including both successful and unsuccessful versions. This record summarizes the scope of that practical work.
+I implemented and executed the portfolio workflow, tested successful and unsuccessful versions, and published it. This record summarizes the work carried out.
 
-| Exercise area | Work completed |
+| Component | Work completed |
 | --- | --- |
 | Form trigger | Received the rebalancing request and mapped the form field to the agent prompt |
 | Google Sheets | Read portfolio positions and used separate updates for prices and proposed quantities |
 | Marketstack | Connected EOD data retrieval to the portfolio workflow |
-| Agent context | Worked with task instructions and tool descriptions |
+| Agent context | Configured task instructions and tool descriptions |
 | Rebalancing | Updated proposed holdings and reread the sheet to check the allocation |
 | Communication | Integrated Gmail reports and Pushover notifications |
 | Conditional logic | Built the If-based routing for the agent's completion response |
 | Debugging | Executed successful and unsuccessful versions and inspected execution details |
-| Publication | Completed the published-form workflow exercise |
+| Publication | Published the workflow and executed it through the production form |
 
-This is a qualitative record of completed exercises. It does not assign individual pass/fail results or performance measurements to runs beyond the information recorded here.
+This is a qualitative record of workflow executions. It does not assign individual pass/fail results or performance measurements to runs beyond the information recorded here.
 
 ## Earlier EOD smoke test
 
@@ -29,6 +29,6 @@ This is a qualitative record of completed exercises. It does not assign individu
 | Duration | Approximately 6.88 seconds for the original run |
 | Token usage | Approximately 421 tokens for the original run |
 
-The returned prices document the workflow output and were not independently verified. These measurements describe the earlier EOD lookup, not the Day 5 rebalancer.
+The returned prices document the workflow output and were not independently verified. These measurements describe the earlier EOD lookup, not the portfolio rebalancer.
 
 [Back to case study](../README.md)
