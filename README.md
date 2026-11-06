@@ -15,29 +15,22 @@ I connect **project delivery, business analysis, artificial intelligence, and wo
 
 ## Selected cases
 
-### [Equity EOD AI Agent](projects/01-equity-eod-ai-agent/README.md)
+### [Equity EOD AI Agent & Portfolio Rebalancer](projects/01-equity-eod-ai-agent/README.md)
 
-**Stack:** n8n · OpenAI API · Marketstack  
-**Status:** Tested learning prototype — one recorded successful run, **not** a production deployment.
+**Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover  
+**Status:** Implemented learning project — exercises completed with successful and unsuccessful runs.
 
-I built the assistant to retrieve historical end-of-day equity data through an external API tool. Its case study includes architecture, implementation notes, observed behavior, limitations, and a [test plan](projects/01-equity-eod-ai-agent/docs/test-plan.md). Reported API values have not been independently verified.
+I developed an EOD price assistant into a form-driven portfolio-rebalancing workflow. It reads positions, updates prices, writes proposed quantities, checks the allocation and communicates through email and push notifications. The Day 5 work included conditional logic, execution inspection and publication of the workflow.
 
-I am exploring an extension to read a Google Sheets portfolio and update EOD prices by ticker. This integration is documented but **not implemented or tested**.
-
-### [Gmail Draft Assistant](projects/02-gmail-draft-assistant/README.md)
-
-**Proposed stack:** n8n · OpenAI API · Gmail  
-**Status:** Planned learning case — documentation only.
-
-I am designing recent-message retrieval, summaries, and draft creation for a fixed test recipient, with human review and no send tool. It includes scope, configuration notes, limitations, and an [unexecuted test plan](projects/02-gmail-draft-assistant/docs/test-plan.md). No Gmail implementation or results are claimed.
+The [case study](projects/01-equity-eod-ai-agent/README.md) and [execution record](projects/01-equity-eod-ai-agent/docs/test-plan.md) describe the completed work.
 
 ## Field lab
 
 I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and record practical experiments.
 
-In my [messaging experiments](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/messaging), I built Pushover notifications, Telegram conversations and a Slack bot. I am documenting the configuration and still need to add reviewed workflow exports and execution details.
+In my [messaging experiments](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/messaging), I built Pushover notifications, Telegram conversations and a Slack bot. The lab documents the integration setup and practical learning.
 
-I keep selected cases here and smaller experiments in the lab. Connecting these messaging channels to the Equity Agent is one of the ideas I want to explore next.
+I keep selected cases here and smaller experiments in the lab. The [Day 5 rebalancer](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/portfolio-rebalancer) combines portfolio updates with Gmail and Pushover notifications.
 
 ## How I approach delivery
 
@@ -45,8 +38,6 @@ I keep selected cases here and smaller experiments in the lab. Connecting these 
 
 - [Delivery method](docs/delivery-method.md): approach to scope, process analysis, delivery, risks, and validation.
 - [Case study template](docs/case-study-template.md): repeatable standard for future evidence-based documentation.
-
-Planned areas for future documented projects include business-process automation, AI-assisted knowledge retrieval, and project-delivery artifacts. They are **not** presented as completed work.
 
 ## Portfolio website
 
