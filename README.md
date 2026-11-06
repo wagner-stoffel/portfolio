@@ -18,19 +18,19 @@ I connect **project delivery, business analysis, artificial intelligence, and wo
 ### [Equity EOD AI Agent & Portfolio Rebalancer](projects/01-equity-eod-ai-agent/README.md)
 
 **Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover  
-**Status:** Implemented learning project — exercises completed with successful and unsuccessful runs.
+**Status:** Implemented and tested, with successful and unsuccessful executions.
 
-I developed an EOD price assistant into a form-driven portfolio-rebalancing workflow. It reads positions, updates prices, writes proposed quantities, checks the allocation and communicates through email and push notifications. The Day 5 work included conditional logic, execution inspection and publication of the workflow.
+I developed an EOD price assistant into a form-driven portfolio-rebalancing workflow. It reads positions, updates prices, writes proposed quantities, checks the allocation and communicates through email and push notifications. I implemented conditional logic, inspected executions and published the workflow.
 
 The [case study](projects/01-equity-eod-ai-agent/README.md) and [execution record](projects/01-equity-eod-ai-agent/docs/test-plan.md) describe the completed work.
 
 ## Field lab
 
-I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and record practical experiments.
+I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and document implemented workflows.
 
-In my [messaging experiments](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/messaging), I built Pushover notifications, Telegram conversations and a Slack bot. The lab documents the integration setup and practical learning.
+In my [messaging experiments](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/messaging), I built Pushover notifications, Telegram conversations and a Slack bot. The lab documents the integration setup and implementation details.
 
-I keep selected cases here and smaller experiments in the lab. The [Day 5 rebalancer](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/portfolio-rebalancer) combines portfolio updates with Gmail and Pushover notifications.
+I keep selected cases here and smaller experiments in the lab. The [portfolio rebalancer](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/portfolio-rebalancer) combines portfolio updates with Gmail and Pushover notifications.
 
 ## How I approach delivery
 
