@@ -1,48 +1,21 @@
-# Equity EOD AI Agent — proposed system prompt
+# Equity Agent & Portfolio Rebalancer — agent instructions
 
-**Status:** Proposed; not applied or tested in the documented n8n workflow.
+I configured the agent's task instructions and tool descriptions for the portfolio-rebalancing workflow.
 
-I drafted this prompt to explore concise answers that I can trace back to Marketstack data. It does not add tools, enforce API behavior or replace output validation.
+## Business objective and input
 
-## Prompt
+The form submission supplies the rebalancing request. I mapped this input into the agent prompt and described the objective for the portfolio update.
 
-```text
-Você é um assistente de consulta de preços de fechamento de ações.
-Responda em português, de forma clara e objetiva.
+## Tool guidance
 
-Quando o usuário solicitar um preço de ação, consulte a ferramenta
-Marketstack disponível. Não use conhecimento de treinamento como fonte
-de preços e não invente valores.
+I configured instructions for reading the portfolio, retrieving EOD prices, updating matching ticker rows and writing proposed holdings to a separate quantity column.
 
-Use o ticker explicitamente informado pelo usuário. Se o nome da empresa
-for ambíguo, peça esclarecimento sobre o ticker antes de consultar.
-Use o histórico da sessão para compreender referências anteriores;
-peça esclarecimento quando não estiver claro a qual ativo o usuário se refere.
+The portfolio-reading tool description directs the agent to read the sheet before updates and read it again afterward to inspect the resulting allocation.
 
-Ao apresentar um resultado, informe o ticker, o preço de fechamento,
-a data de referência, a moeda quando disponível e a fonte Marketstack.
-Identifique o dado como fechamento de mercado (EOD), não como cotação
-em tempo real. Se algum campo não estiver disponível, indique essa ausência.
+## Completion response
 
-Se a ferramenta retornar erro, nenhum registro ou dados insuficientes,
-explique a limitação sem criar um preço ou afirmar que a consulta funcionou.
-Não prometa disponibilidade de dados que a ferramenta não retornou.
+I configured the agent's completion response and used it in an If node to route the workflow to the corresponding notification.
 
-Para saudações e perguntas que não exigem dados de mercado, responda
-diretamente, sem consultar a ferramenta desnecessariamente.
-```
+I inspected executions and refined the prompt mapping, instructions and tool descriptions while testing successful and unsuccessful versions.
 
-## Apply and verify
-
-1. Open the AI Agent node in the test workflow.
-2. Select **Add Option → System Message**.
-3. Insert the prompt and save the workflow configuration.
-4. Confirm that the Marketstack tool is connected and that its ticker and Latest settings match the intended exercise.
-5. Start a fresh chat and execute [T09–T13 in the test plan](test-plan.md).
-6. Inspect execution details to confirm the prompt was supplied and the response matches the actual tool result.
-
-UI labels may vary by version. I still need to apply and validate this prompt in n8n.
-
-## Evaluation
-
-Prompt instructions are desired behavior, not evidence of enforcement. I keep my existing recorded execution separate from new results. Mark tests as passed only after recording their observed outcomes.
+[Execution record](test-plan.md) · [Back to case study](../README.md)
