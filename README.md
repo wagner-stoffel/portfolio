@@ -24,6 +24,20 @@ I developed an EOD price assistant into a form-driven portfolio-rebalancing work
 
 The [case study](projects/01-equity-eod-ai-agent/README.md) and [execution record](projects/01-equity-eod-ai-agent/docs/test-plan.md) describe the completed work.
 
+### [Gmail Draft Assistant](projects/02-gmail-draft-assistant/README.md)
+
+**Stack:** n8n · OpenAI · Gmail · Simple Memory  
+**Status:** Implemented and tested.
+
+I connected email retrieval and draft creation to a conversational agent. I configured a relative date filter, summarized retrieved email content and created a draft in Gmail.
+
+### [Voice Customer Support](projects/03-voice-customer-support/README.md)
+
+**Stack:** ElevenLabs Agents Platform · Voice agents · Knowledge bases · Conditional routing  
+**Status:** Implemented and tested.
+
+I built a main voice agent and separate product and stock specialists. I configured prompts, voices, knowledge documents and routing conditions, then tested both paths in spoken conversations.
+
 ## Field lab
 
 I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and document implemented workflows.
@@ -37,7 +51,7 @@ I keep selected cases here and smaller experiments in the lab. The [portfolio re
 **Discover → Define → Plan → Implement → Validate → Improve.** Business context and verification come before claims of success.
 
 - [Delivery method](docs/delivery-method.md): approach to scope, process analysis, delivery, risks, and validation.
-- [Case study template](docs/case-study-template.md): repeatable standard for future evidence-based documentation.
+- [Case study template](docs/case-study-template.md): structure for documenting completed implementations and observed results.
 
 ## Portfolio website
 
@@ -67,15 +81,17 @@ portfolio/
     │   └── docs/
     │       ├── system-prompt.md
     │       └── test-plan.md
-    └── 02-gmail-draft-assistant/
-        ├── README.md
-        └── docs/test-plan.md
+    ├── 02-gmail-draft-assistant/
+    │   ├── README.md
+    │   └── docs/test-plan.md
+    └── 03-voice-customer-support/
+        └── README.md
 ```
 
 ## Standards
 
-- Document the problem, objectives, scope, architecture, observed tests, limitations, and improvements.
-- Distinguish completed, observed, planned, and untested work.
+- Document completed implementations, configuration, executed tests and observed results in the first person.
+- Keep documentation focused on work performed and retain the context of recorded measurements.
 - Reference relevant technical documentation and respect third-party licenses.
 - Do not publish credentials, personal information, or unreviewed workflow exports.
 - Do not claim production use, measured impact, or repeatability without supporting evidence.
