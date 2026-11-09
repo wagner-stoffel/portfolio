@@ -1,43 +1,38 @@
 # Case study template
 
-> Copy this into each new project folder. Replace placeholders with real evidence. Do not represent planned or untested work as delivered.
+Use this structure to document completed implementations in the first person.
 
 ## Overview
+
 - **Project:** [name]
-- **Status:** [planned / prototype / tested / deployed]
-- **Context:** [learning / independent / authorized client work]
-- **My role:** [specific contributions]
-- **Tools:** [tools and relevant versions]
+- **Status:** [implemented / tested / published, as applicable]
+- **My role:** [work performed]
+- **Tools:** [tools used]
 
-## Problem and business value
-[Describe stakeholders, the AS-IS workflow, constraints, and the actual problem.]
+## Business context
 
-## Objectives and scope
-[State the expected TO-BE outcome, success criteria, inclusions, and exclusions.]
+[Describe the business process and the purpose of the implementation.]
 
-## Project approach
-[Explain decisions, requirements, prioritization, risks, and delivery milestones.]
+## Implementation
 
-## Architecture and implementation
-[Document workflow, APIs, AI models, data flow, and relevant decisions. Add safe, sanitized diagrams or exports if available.]
+[Describe the workflow, configuration, integrations and decisions actually implemented.]
 
-## Tests and evidence
-| Test | Expected result | Observed result | Status |
-| --- | --- | --- | --- |
-| [case] | [criterion] | [observation] | [not run / passed / failed] |
+## Execution results
 
-[Include how to reproduce tests and explain measurement limitations.]
+| Interaction or test | Observed result |
+| --- | --- |
+| [executed interaction] | [actual result] |
 
-## Limitations and risks
-[Identify reliability, security, privacy, data quality, cost, and operational concerns.]
+[Report measurements only when recorded, with their execution context.]
 
-## Next steps
-- [ ] [highest-value verified improvement]
+## Technical documentation
 
-## Attribution
-[Credit learning sources, frameworks, services, and third-party code.]
+[Link to implementation notes and execution records.]
 
-## Publication checks
-- [ ] Credentials and identifying information removed
-- [ ] Workflow exports and screenshots sanitized
-- [ ] All claimed results backed by actual evidence
+## Writing standards
+
+- Describe completed work as my own implementation.
+- Include only executed interactions and actual outcomes.
+- Keep the narrative focused on the implementation and results.
+- Protect credentials and private information.
+- Preserve required third-party license notices.
