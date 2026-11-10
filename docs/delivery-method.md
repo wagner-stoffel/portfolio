@@ -20,6 +20,10 @@ I connected Gmail retrieval and draft-creation tools to a conversational agent. 
 
 I created voice agents with role-specific prompts and knowledge documents. I configured a main agent to route product and stock questions to separate specialists and tested both paths in spoken conversations.
 
+## Voice workflow integration
+
+I implemented an n8n audio pipeline and connected an ElevenLabs voice agent to a Google Sheets portfolio lookup. I inspected failed executions, corrected binary and JSON input mappings, published the webhook integration and tested consecutive spoken questions through the agent's shared link.
+
 ## Documentation
 
 I record the configuration, executed interactions and observed outcomes. Numerical measurements retain the context of the execution in which they were recorded.
