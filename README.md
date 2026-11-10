@@ -45,6 +45,27 @@ I built a main voice agent and separate product and stock specialists. I configu
 
 I connected an ElevenLabs voice agent to an n8n portfolio-query workflow through a POST webhook. I published both sides and tested consecutive holdings questions through the agent's shareable link. I also built and tested an audio transcription, agent-response and speech-generation pipeline orchestrated by n8n.
 
+### [Dental WhatsApp AI Assistant — Policy Resolution & Safety Testing](projects/05-whatsapp-dental-assistant/README.md)
+
+**Focus:** Conversational AI · System prompts · Safety boundaries · Human handoff  
+**Status:** Completed simulator exercise; five patient scenarios tested successfully. No production deployment.
+
+I reconciled six conflicting operational sources into a WhatsApp assistant's instructions for a dental clinic. I defined booking-request boundaries, emergency escalation and clinical safety rules, tested five patient scenarios and refined two responses after reviewing the results.
+
+### [Appointment Confirmation Workflow — CRM & Calendar Automation](projects/06-booking-confirmation-workflow/README.md)
+
+**Tools:** Kommo · Google Calendar · Meta WhatsApp Business · Gmail · Website forms  
+**Status:** Partially implemented and tested in a simulator; the last captured free-slot branch was not connected.
+
+I designed the booking process as a conditional workflow and configured its initial CRM lookup, new-contact creation and branch-specific availability checks. The recorded sample execution passed those steps and stopped at an unconnected output. The case study distinguishes tested nodes from the intended booking and confirmation path.
+
+### [AI-Directed Landing Page — Dental Whitening Campaign](projects/07-ai-landing-page-architecture/README.md)
+
+**Design stack:** React · Tailwind CSS · Vercel · Supabase · Resend · Cloudflare Turnstile  
+**Status:** Architecture and AI implementation brief completed; exercise submitted. Production deployment not verified.
+
+I specified the architecture and AI coding brief for a Spanish-language campaign page offering 20% off a first whitening session. The design covers a lead form, reception dashboard, authenticated access, server-side secrets, consent, anti-spam checks and new-lead notification.
+
 ## Field lab
 
 I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and document implemented workflows.
@@ -93,8 +114,17 @@ portfolio/
     │   └── docs/test-plan.md
     ├── 03-voice-customer-support/
     │   └── README.md
-    └── 04-voice-portfolio-assistant/
-        └── README.md
+    ├── 04-voice-portfolio-assistant/
+    │   └── README.md
+    ├── 05-whatsapp-dental-assistant/
+    │   ├── README.md
+    │   └── docs/assistant-specification.md
+    ├── 06-booking-confirmation-workflow/
+    │   ├── README.md
+    │   └── docs/workflow-design.md
+    └── 07-ai-landing-page-architecture/
+        ├── README.md
+        └── docs/architecture.md
 ```
 
 ## Standards
