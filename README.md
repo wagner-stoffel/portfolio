@@ -38,6 +38,13 @@ I connected email retrieval and draft creation to a conversational agent. I conf
 
 I built a main voice agent and separate product and stock specialists. I configured prompts, voices, knowledge documents and routing conditions, then tested both paths in spoken conversations.
 
+### [Voice Portfolio Assistant](projects/04-voice-portfolio-assistant/README.md)
+
+**Stack:** ElevenLabs · n8n · Google Gemini · Google Sheets  
+**Status:** Implemented, tested and published.
+
+I connected an ElevenLabs voice agent to an n8n portfolio-query workflow through a POST webhook. I published both sides and tested consecutive holdings questions through the agent's shareable link. I also built and tested an audio transcription, agent-response and speech-generation pipeline orchestrated by n8n.
+
 ## Field lab
 
 I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and document implemented workflows.
@@ -84,7 +91,9 @@ portfolio/
     ├── 02-gmail-draft-assistant/
     │   ├── README.md
     │   └── docs/test-plan.md
-    └── 03-voice-customer-support/
+    ├── 03-voice-customer-support/
+    │   └── README.md
+    └── 04-voice-portfolio-assistant/
         └── README.md
 ```
 
