@@ -74,6 +74,8 @@ In my [messaging experiments](https://github.com/wagner-stoffel/n8n-lab/tree/mai
 
 I keep selected cases here and smaller experiments in the lab. The [portfolio rebalancer](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/portfolio-rebalancer) combines portfolio updates with Gmail and Pushover notifications.
 
+I documented my [analysis of retrieval, embeddings and agentic RAG](https://github.com/wagner-stoffel/n8n-lab/blob/main/docs/retrieval-and-agentic-rag.md), alongside my [Supabase account setup and platform review](https://github.com/wagner-stoffel/n8n-lab/blob/main/docs/supabase-setup.md).
+
 ## How I approach delivery
 
 **Discover → Define → Plan → Implement → Validate → Improve.** Business context and verification come before claims of success.
