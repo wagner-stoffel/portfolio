@@ -37,7 +37,7 @@ The voice assistant returned two SPY shares for the configured portfolio. In the
 
 ## Technical documentation
 
-- [Workflow configuration and request mapping](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/elevenlabs-n8n-integration)
-- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/experiments/elevenlabs-n8n-integration/validation.md)
+- [Workflow configuration and request mapping](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/elevenlabs-n8n-integration)
+- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/projects/elevenlabs-n8n-integration/validation.md)
 
 [Back to portfolio](../../README.md)
