@@ -36,7 +36,7 @@ I also configured the Twilio number-import form in ElevenLabs using the phone nu
 ## Technical documentation
 
 - [Product ingestion](../08-product-knowledge-ingestion/README.md)
-- [Retrieval and voice configuration](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/product-expert-voice-agent)
-- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/experiments/product-expert-voice-agent/validation.md)
+- [Retrieval and voice configuration](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/product-expert-voice-agent)
+- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/projects/product-expert-voice-agent/validation.md)
 
 [Back to portfolio](../../README.md)
