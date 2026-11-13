@@ -137,13 +137,3 @@ portfolio/
     └── 08-product-knowledge-ingestion/
         └── README.md
 ```
-
-## Standards
-
-- List projects from newest to oldest; add new projects at the top of the README and project page.
-
-- Document completed implementations, configuration, executed tests and observed results in the first person.
-- Keep documentation focused on work performed and retain the context of recorded measurements.
-- Reference relevant technical documentation and respect third-party licenses.
-- Do not publish credentials, personal information, or unreviewed workflow exports.
-- Do not claim production use, measured impact, or repeatability without supporting evidence.
