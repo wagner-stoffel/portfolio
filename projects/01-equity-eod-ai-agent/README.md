@@ -51,7 +51,7 @@ I ran successful and unsuccessful versions, inspected execution logs and refined
 
 The conditional notification checks the agent's completion response. That response is a workflow signal, not independent proof of mathematical correctness. The workflow also uses a reread of the sheet to inspect the allocation.
 
-See the [execution record](docs/test-plan.md) and the [technical lab notes](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/portfolio-rebalancer).
+See the [execution record](docs/test-plan.md) and the [technical lab notes](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/portfolio-rebalancer).
 
 ## Demonstrated behavior
 
