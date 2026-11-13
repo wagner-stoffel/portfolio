@@ -66,6 +66,13 @@ I designed the booking process as a conditional workflow and configured its init
 
 I specified the architecture and AI coding brief for a Spanish-language campaign page offering 20% off a first whitening session. The design covers a lead form, reception dashboard, authenticated access, server-side secrets, consent, anti-spam checks and new-lead notification.
 
+### [Product Knowledge Ingestion](projects/08-product-knowledge-ingestion/README.md)
+
+**Stack:** n8n · Google Sheets · Supabase · PostgreSQL/pgvector · OpenAI embeddings  
+**Status:** Implemented and tested.
+
+I built a product-data ingestion pipeline that transforms 60 catalog rows into readable documents, generates 1536-dimensional embeddings and stores them with category metadata in Supabase. I inspected the results, corrected a formatting issue and reloaded the 60 documents.
+
 ## Field lab
 
 I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and document implemented workflows.
@@ -124,9 +131,11 @@ portfolio/
     ├── 06-booking-confirmation-workflow/
     │   ├── README.md
     │   └── docs/workflow-design.md
-    └── 07-ai-landing-page-architecture/
-        ├── README.md
-        └── docs/architecture.md
+    ├── 07-ai-landing-page-architecture/
+    │   ├── README.md
+    │   └── docs/architecture.md
+    └── 08-product-knowledge-ingestion/
+        └── README.md
 ```
 
 ## Standards
