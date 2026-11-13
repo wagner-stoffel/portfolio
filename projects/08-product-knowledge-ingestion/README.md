@@ -31,8 +31,8 @@ I identified an extra dollar sign in the description mapping, removed the initia
 
 ## Technical documentation
 
-- [Workflow and field configuration](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/product-knowledge-ingestion)
-- [Database schema and matching function](https://github.com/wagner-stoffel/n8n-lab/blob/main/experiments/product-knowledge-ingestion/schema.sql)
-- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/experiments/product-knowledge-ingestion/validation.md)
+- [Workflow and field configuration](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/product-knowledge-ingestion)
+- [Database schema and matching function](https://github.com/wagner-stoffel/n8n-lab/blob/main/projects/product-knowledge-ingestion/schema.sql)
+- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/projects/product-knowledge-ingestion/validation.md)
 
 [Back to portfolio](../../README.md)
