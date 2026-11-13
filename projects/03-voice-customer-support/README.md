@@ -37,7 +37,7 @@ The product and stock responses refer to the example data configured for these t
 
 ## Technical documentation
 
-- [Agent configuration and routing](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/elevenlabs-voice-agent)
-- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/experiments/elevenlabs-voice-agent/validation.md)
+- [Agent configuration and routing](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/elevenlabs-voice-agent)
+- [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/projects/elevenlabs-voice-agent/validation.md)
 
 [Back to portfolio](../../README.md)
