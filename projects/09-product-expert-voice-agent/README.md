@@ -14,7 +14,7 @@ I built a voice sales assistant that answers computer-accessory questions using 
 | Knowledge base | 60 product documents with category metadata and 1536-dimensional embeddings |
 | Retrieval | Supabase Vector Store exposed as an n8n AI Agent tool, with a 10-document limit |
 | Question answering | Google Gemini uses retrieved product text to compose the answer |
-| Voice interface | ElevenLabs sales agent with the Miss Walker voice |
+| Voice interface | ElevenLabs sales agent |
 | Integration | POST webhook carrying a required question string; JSON response from n8n |
 
 I configured the query embedding model to match the model used during ingestion. I mapped the webhook's question field to the agent input and used Respond to Webhook to return the answer.
