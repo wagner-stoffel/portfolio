@@ -84,9 +84,9 @@ The [case study](projects/01-equity-eod-ai-agent/README.md) and [execution recor
 
 I use [n8n-lab](https://github.com/wagner-stoffel/n8n-lab) to explore integrations, inspect data flows and document implemented workflows.
 
-In my [messaging experiments](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/messaging), I built Pushover notifications, Telegram conversations and a Slack bot. The lab documents the integration setup and implementation details.
+In my [messaging projects](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/messaging), I built Pushover notifications, Telegram conversations and a Slack bot. The lab documents the integration setup and implementation details.
 
-I keep selected cases here and smaller experiments in the lab. The [portfolio rebalancer](https://github.com/wagner-stoffel/n8n-lab/tree/main/experiments/portfolio-rebalancer) combines portfolio updates with Gmail and Pushover notifications.
+I present selected cases here and document project implementations in the lab. The [portfolio rebalancer](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/portfolio-rebalancer) combines portfolio updates with Gmail and Pushover notifications.
 
 I documented my [analysis of retrieval, embeddings and agentic RAG](https://github.com/wagner-stoffel/n8n-lab/blob/main/docs/retrieval-and-agentic-rag.md), alongside my [Supabase account setup and platform review](https://github.com/wagner-stoffel/n8n-lab/blob/main/docs/supabase-setup.md).
 
