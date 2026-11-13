@@ -15,6 +15,13 @@ I connect **project delivery, business analysis, artificial intelligence, and wo
 
 ## Selected cases
 
+### [Product Expert Voice Agent](projects/09-product-expert-voice-agent/README.md)
+
+**Stack:** ElevenLabs · n8n · Supabase · Google Gemini · OpenAI embeddings  
+**Status:** Implemented, tested and published.
+
+I built a voice sales assistant that queries a 60-product knowledge base through an agentic RAG workflow. I tested keyboard and computer-memory questions, connected the voice agent through a POST webhook and published the integration. I also configured the Twilio number-import form in ElevenLabs.
+
 ### [Product Knowledge Ingestion](projects/08-product-knowledge-ingestion/README.md)
 
 **Stack:** n8n · Google Sheets · Supabase · PostgreSQL/pgvector · OpenAI embeddings  
@@ -134,6 +141,8 @@ portfolio/
     ├── 07-ai-landing-page-architecture/
     │   ├── README.md
     │   └── docs/architecture.md
-    └── 08-product-knowledge-ingestion/
+    ├── 08-product-knowledge-ingestion/
+    │   └── README.md
+    └── 09-product-expert-voice-agent/
         └── README.md
 ```
