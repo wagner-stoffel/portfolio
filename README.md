@@ -15,49 +15,12 @@ I connect **project delivery, business analysis, artificial intelligence, and wo
 
 ## Selected cases
 
-### [Equity EOD AI Agent & Portfolio Rebalancer](projects/01-equity-eod-ai-agent/README.md)
+### [Product Knowledge Ingestion](projects/08-product-knowledge-ingestion/README.md)
 
-**Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover  
-**Status:** Implemented and tested, with successful and unsuccessful executions.
-
-I developed an EOD price assistant into a form-driven portfolio-rebalancing workflow. It reads positions, updates prices, writes proposed quantities, checks the allocation and communicates through email and push notifications. I implemented conditional logic, inspected executions and published the workflow.
-
-The [case study](projects/01-equity-eod-ai-agent/README.md) and [execution record](projects/01-equity-eod-ai-agent/docs/test-plan.md) describe the completed work.
-
-### [Gmail Draft Assistant](projects/02-gmail-draft-assistant/README.md)
-
-**Stack:** n8n · OpenAI · Gmail · Simple Memory  
+**Stack:** n8n · Google Sheets · Supabase · PostgreSQL/pgvector · OpenAI embeddings  
 **Status:** Implemented and tested.
 
-I connected email retrieval and draft creation to a conversational agent. I configured a relative date filter, summarized retrieved email content and created a draft in Gmail.
-
-### [Voice Customer Support](projects/03-voice-customer-support/README.md)
-
-**Stack:** ElevenLabs Agents Platform · Voice agents · Knowledge bases · Conditional routing  
-**Status:** Implemented and tested.
-
-I built a main voice agent and separate product and stock specialists. I configured prompts, voices, knowledge documents and routing conditions, then tested both paths in spoken conversations.
-
-### [Voice Portfolio Assistant](projects/04-voice-portfolio-assistant/README.md)
-
-**Stack:** ElevenLabs · n8n · Google Gemini · Google Sheets  
-**Status:** Implemented, tested and published.
-
-I connected an ElevenLabs voice agent to an n8n portfolio-query workflow through a POST webhook. I published both sides and tested consecutive holdings questions through the agent's shareable link. I also built and tested an audio transcription, agent-response and speech-generation pipeline orchestrated by n8n.
-
-### [Dental WhatsApp AI Assistant — Policy Resolution & Safety Testing](projects/05-whatsapp-dental-assistant/README.md)
-
-**Focus:** Conversational AI · System prompts · Safety boundaries · Human handoff  
-**Status:** Completed simulator exercise; five patient scenarios tested successfully. No production deployment.
-
-I reconciled six conflicting operational sources into a WhatsApp assistant's instructions for a dental clinic. I defined booking-request boundaries, emergency escalation and clinical safety rules, tested five patient scenarios and refined two responses after reviewing the results.
-
-### [Appointment Confirmation Workflow — CRM & Calendar Automation](projects/06-booking-confirmation-workflow/README.md)
-
-**Tools:** Kommo · Google Calendar · Meta WhatsApp Business · Gmail · Website forms  
-**Status:** Partially implemented and tested in a simulator; the last captured free-slot branch was not connected.
-
-I designed the booking process as a conditional workflow and configured its initial CRM lookup, new-contact creation and branch-specific availability checks. The recorded sample execution passed those steps and stopped at an unconnected output. The case study distinguishes tested nodes from the intended booking and confirmation path.
+I built a product-data ingestion pipeline that transforms 60 catalog rows into readable documents, generates 1536-dimensional embeddings and stores them with category metadata in Supabase. I inspected the results, corrected a formatting issue and reloaded the 60 documents.
 
 ### [AI-Directed Landing Page — Dental Whitening Campaign](projects/07-ai-landing-page-architecture/README.md)
 
@@ -66,12 +29,49 @@ I designed the booking process as a conditional workflow and configured its init
 
 I specified the architecture and AI coding brief for a Spanish-language campaign page offering 20% off a first whitening session. The design covers a lead form, reception dashboard, authenticated access, server-side secrets, consent, anti-spam checks and new-lead notification.
 
-### [Product Knowledge Ingestion](projects/08-product-knowledge-ingestion/README.md)
+### [Appointment Confirmation Workflow — CRM & Calendar Automation](projects/06-booking-confirmation-workflow/README.md)
 
-**Stack:** n8n · Google Sheets · Supabase · PostgreSQL/pgvector · OpenAI embeddings  
+**Tools:** Kommo · Google Calendar · Meta WhatsApp Business · Gmail · Website forms  
+**Status:** Partially implemented and tested in a simulator; the last captured free-slot branch was not connected.
+
+I designed the booking process as a conditional workflow and configured its initial CRM lookup, new-contact creation and branch-specific availability checks. The recorded sample execution passed those steps and stopped at an unconnected output. The case study distinguishes tested nodes from the intended booking and confirmation path.
+
+### [Dental WhatsApp AI Assistant — Policy Resolution & Safety Testing](projects/05-whatsapp-dental-assistant/README.md)
+
+**Focus:** Conversational AI · System prompts · Safety boundaries · Human handoff  
+**Status:** Completed simulator exercise; five patient scenarios tested successfully. No production deployment.
+
+I reconciled six conflicting operational sources into a WhatsApp assistant's instructions for a dental clinic. I defined booking-request boundaries, emergency escalation and clinical safety rules, tested five patient scenarios and refined two responses after reviewing the results.
+
+### [Voice Portfolio Assistant](projects/04-voice-portfolio-assistant/README.md)
+
+**Stack:** ElevenLabs · n8n · Google Gemini · Google Sheets  
+**Status:** Implemented, tested and published.
+
+I connected an ElevenLabs voice agent to an n8n portfolio-query workflow through a POST webhook. I published both sides and tested consecutive holdings questions through the agent's shareable link. I also built and tested an audio transcription, agent-response and speech-generation pipeline orchestrated by n8n.
+
+### [Voice Customer Support](projects/03-voice-customer-support/README.md)
+
+**Stack:** ElevenLabs Agents Platform · Voice agents · Knowledge bases · Conditional routing  
 **Status:** Implemented and tested.
 
-I built a product-data ingestion pipeline that transforms 60 catalog rows into readable documents, generates 1536-dimensional embeddings and stores them with category metadata in Supabase. I inspected the results, corrected a formatting issue and reloaded the 60 documents.
+I built a main voice agent and separate product and stock specialists. I configured prompts, voices, knowledge documents and routing conditions, then tested both paths in spoken conversations.
+
+### [Gmail Draft Assistant](projects/02-gmail-draft-assistant/README.md)
+
+**Stack:** n8n · OpenAI · Gmail · Simple Memory  
+**Status:** Implemented and tested.
+
+I connected email retrieval and draft creation to a conversational agent. I configured a relative date filter, summarized retrieved email content and created a draft in Gmail.
+
+### [Equity EOD AI Agent & Portfolio Rebalancer](projects/01-equity-eod-ai-agent/README.md)
+
+**Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover  
+**Status:** Implemented and tested, with successful and unsuccessful executions.
+
+I developed an EOD price assistant into a form-driven portfolio-rebalancing workflow. It reads positions, updates prices, writes proposed quantities, checks the allocation and communicates through email and push notifications. I implemented conditional logic, inspected executions and published the workflow.
+
+The [case study](projects/01-equity-eod-ai-agent/README.md) and [execution record](projects/01-equity-eod-ai-agent/docs/test-plan.md) describe the completed work.
 
 ## Field lab
 
@@ -139,6 +139,8 @@ portfolio/
 ```
 
 ## Standards
+
+- List projects from newest to oldest; add new projects at the top of the README and project page.
 
 - Document completed implementations, configuration, executed tests and observed results in the first person.
 - Keep documentation focused on work performed and retain the context of recorded measurements.
