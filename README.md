@@ -15,6 +15,13 @@ I connect **project delivery, business analysis, artificial intelligence, and wo
 
 ## Selected cases
 
+### [AI Web Search Pipeline](projects/10-ai-web-search-pipeline/README.md)
+
+**Stack:** n8n · OpenRouter · DeepSeek V3.2 · Structured Output Parser · Firecrawl · HTTP Request  
+**Status:** Implemented and tested.
+
+I built a workflow that converts a natural-language research question into a structured search query, retrieves web results and delivers them through HTTP POST. I inspected the query, search results and received payload. I also implemented and published a Google Drive file-notification workflow with Pushover.
+
 ### [Product Expert Voice Agent](projects/09-product-expert-voice-agent/README.md)
 
 **Stack:** ElevenLabs · n8n · Supabase · Google Gemini · OpenAI embeddings  
@@ -147,6 +154,8 @@ portfolio/
     │   └── docs/architecture.md
     ├── 08-product-knowledge-ingestion/
     │   └── README.md
-    └── 09-product-expert-voice-agent/
+    ├── 09-product-expert-voice-agent/
+    │   └── README.md
+    └── 10-ai-web-search-pipeline/
         └── README.md
 ```
