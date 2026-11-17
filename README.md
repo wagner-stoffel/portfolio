@@ -92,6 +92,8 @@ I documented my [analysis of retrieval, embeddings and agentic RAG](https://gith
 
 I also implemented a [self-hosted AI agent](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/self-hosted-ai-agent) with Docker, persistent storage and an Ollama host connection. I tested conversational responses and Marketstack tool calls with both remote and local inference.
 
+I prepared the [HomeLab AI architecture and configuration](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/homelab-ai) for a dedicated n8n and Ollama server with NVIDIA GPU access. The package includes Docker Compose files, persistent storage, private model networking, SSH administration and guides for webhooks, Google OAuth, validation and backup/restore. **Status: Architecture, configuration files and operating guides prepared.**
+
 ## How I approach delivery
 
 **Discover → Define → Plan → Implement → Validate → Improve.** Business context and verification come before claims of success.
