@@ -73,10 +73,10 @@ I connected email retrieval and draft creation to a conversational agent. I conf
 
 ### [Equity EOD AI Agent & Portfolio Rebalancer](projects/01-equity-eod-ai-agent/README.md)
 
-**Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover  
+**Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover · Docker · OpenRouter · Ollama  
 **Status:** Implemented and tested, with successful and unsuccessful executions.
 
-I developed an EOD price assistant into a form-driven portfolio-rebalancing workflow. It reads positions, updates prices, writes proposed quantities, checks the allocation and communicates through email and push notifications. I implemented conditional logic, inspected executions and published the workflow.
+I developed an EOD price assistant into a form-driven portfolio-rebalancing workflow. It reads positions, updates prices, writes proposed quantities, checks the allocation and communicates through email and push notifications. I implemented conditional logic, inspected executions and published the workflow. I also implemented and tested a self-hosted version of the price assistant with Docker, remote inference through OpenRouter and local inference through Ollama.
 
 The [case study](projects/01-equity-eod-ai-agent/README.md) and [execution record](projects/01-equity-eod-ai-agent/docs/test-plan.md) describe the completed work.
 
@@ -89,6 +89,8 @@ In my [messaging projects](https://github.com/wagner-stoffel/n8n-lab/tree/main/p
 I present selected cases here and document project implementations in the lab. The [portfolio rebalancer](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/portfolio-rebalancer) combines portfolio updates with Gmail and Pushover notifications.
 
 I documented my [analysis of retrieval, embeddings and agentic RAG](https://github.com/wagner-stoffel/n8n-lab/blob/main/docs/retrieval-and-agentic-rag.md), alongside my [Supabase account setup and platform review](https://github.com/wagner-stoffel/n8n-lab/blob/main/docs/supabase-setup.md).
+
+I also implemented a [self-hosted AI agent](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/self-hosted-ai-agent) with Docker, persistent storage and an Ollama host connection. I tested conversational responses and Marketstack tool calls with both remote and local inference.
 
 ## How I approach delivery
 

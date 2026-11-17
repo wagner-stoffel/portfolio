@@ -1,7 +1,7 @@
 # Equity EOD AI Agent & Portfolio Rebalancer
 
 **Status:** Implemented and tested, including successful and unsuccessful runs.  
-**Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover
+**Stack:** n8n · OpenAI API · Marketstack · Google Sheets · Gmail · Pushover · Docker · OpenRouter · Ollama
 
 ## Business context
 
@@ -14,6 +14,18 @@ I connected data retrieval, spreadsheet updates, agent instructions and conditio
 ### EOD price assistant
 
 A chat trigger passes a natural-language question to an AI Agent connected to a chat model, Simple Memory and a Marketstack tool. The agent retrieves EOD records and formats an answer. EOD closes are historical market data.
+
+### Self-hosted price assistant
+
+I also implemented the conversational price assistant in n8n running locally through Docker. I configured persistent storage, port mapping and a local owner account, then connected the AI Agent to Simple Memory and Marketstack with a model-selected ticker and the Latest filter.
+
+I tested DeepSeek V3.2 and GPT-OSS 120B through OpenRouter. In the DeepSeek test, the first price request returned function-invocation text without calling the tool; repeating the request triggered Marketstack successfully. The GPT-OSS query also called the tool and returned a closing-price answer.
+
+I then connected n8n to Ollama on the host through `http://host.docker.internal:11434`. The connection test succeeded, and the locally running model handled a greeting and an Apple-price query with a successful Marketstack call.
+
+The OpenRouter variant uses remote inference; the Ollama variant uses local inference. Both use the external Marketstack API for financial data.
+
+[Docker and Ollama implementation](https://github.com/wagner-stoffel/n8n-lab/tree/main/projects/self-hosted-ai-agent) · [Execution record](https://github.com/wagner-stoffel/n8n-lab/blob/main/projects/self-hosted-ai-agent/validation.md)
 
 ### Portfolio rebalancer
 
