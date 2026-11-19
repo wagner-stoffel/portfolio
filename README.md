@@ -15,6 +15,13 @@ I connect **project delivery, business analysis, artificial intelligence, and wo
 
 ## Selected cases
 
+### [AMPLIFY — AI-Powered Sales Prospecting & MCP Integration](projects/11-amplify-sales-prospecting/README.md)
+
+**Stack:** n8n · OpenAI · Firecrawl · Hunter.io · MCP · Streamable HTTP · Claude  
+**Status:** Implemented, tested and published (author-reported).
+
+I implemented a B2B sales-prospecting agent with autonomous MCP tool selection, web research, contact discovery and email verification. I refactored it into a reusable subagent, published a separate MCP server and tested remote invocation from Claude. [Technical repository](https://github.com/wagner-stoffel/amplify).
+
 ### [AI Web Search Pipeline](projects/10-ai-web-search-pipeline/README.md)
 
 **Stack:** n8n · OpenRouter · DeepSeek V3.2 · Structured Output Parser · Firecrawl · HTTP Request  
@@ -156,6 +163,8 @@ portfolio/
     │   └── README.md
     ├── 09-product-expert-voice-agent/
     │   └── README.md
-    └── 10-ai-web-search-pipeline/
+    ├── 10-ai-web-search-pipeline/
+    │   └── README.md
+    └── 11-amplify-sales-prospecting/
         └── README.md
 ```
