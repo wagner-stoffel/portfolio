@@ -15,12 +15,12 @@ I connect **project delivery, business analysis, artificial intelligence, and wo
 
 ## Selected cases
 
-### [AMPLIFY — AI-Powered Sales Prospecting & MCP Integration](projects/11-amplify-sales-prospecting/README.md)
+### [AMPLIFY — Agentic AI Sales & Business Development Automation](projects/11-amplify-sales-prospecting/README.md)
 
-**Stack:** n8n · OpenAI · Firecrawl · Hunter.io · MCP · Streamable HTTP · Claude  
-**Status:** Implemented, tested and published (author-reported).
+**Stack:** n8n · OpenAI · MCP · Firecrawl · Hunter.io · Claude · Pipedrive · Gmail  
+**Status:** Prospecting service published; RevOps and SDR implemented and functionally tested.
 
-I implemented a B2B sales-prospecting agent with autonomous MCP tool selection, web research, contact discovery and email verification. I refactored it into a reusable subagent, published a separate MCP server and tested remote invocation from Claude. [Technical repository](https://github.com/wagner-stoffel/amplify).
+I implemented a modular B2B sales automation platform with three specialised agents. Prospecting discovers and qualifies contacts through MCP tools; RevOps creates linked CRM records in Pipedrive; SDR retrieves contacts and creates personalised Gmail drafts for human review. I tested the components, corrected draft content and recipient mapping, and applied context engineering and security controls. Central orchestration is planned. [Technical repository](https://github.com/wagner-stoffel/amplify).
 
 ### [AI Web Search Pipeline](projects/10-ai-web-search-pipeline/README.md)
 
